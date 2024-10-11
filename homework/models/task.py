@@ -30,14 +30,14 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
-    due_date = models.DateTimeField(null=True, blank=True)
+    deadline = models.DateTimeField(null=True, blank=True)
 
 
     def __str__(self):
         return self.title
 
     class Meta:
-        ordering = ['-due_date', '-priority']
+        ordering = ['-deadline', '-priority']
         verbose_name = 'Task'
         verbose_name_plural = 'Tasks'
 
@@ -53,14 +53,14 @@ class SubTask(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
-    due_date = models.DateTimeField(null=True, blank=True)
+    deadline = models.DateTimeField(null=True, blank=True)
 
 
     def __str__(self):
         return self.title
 
     class Meta:
-        ordering = ['-due_date', '-priority']
+        ordering = ['-deadline', '-priority']
         verbose_name = 'SubTask'
         verbose_name_plural = 'SubTasks'
         unique_together = (('title', 'task'),)
