@@ -40,7 +40,7 @@ class Task(models.Model):
         ordering = ['-due_date', '-priority']
         verbose_name = 'Task'
         verbose_name_plural = 'Tasks'
-        unique_together = (('title', 'project'),)
+
 
 class SubTask(models.Model):
     title = models.CharField(

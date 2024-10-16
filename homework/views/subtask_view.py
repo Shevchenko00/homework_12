@@ -1,8 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models.task import SubTask  # Предполагаем, что модель SubTask уже определена
-from .serializers.task_serializer import SubTaskCreateSerializer, SubTaskDetailSerializer
+from homework.models.task import SubTask  # Предполагаем, что модель SubTask уже определена
+from homework.serializers.task_serializer import SubTaskCreateSerializer, SubTaskDetailSerializer
 
 
 class SubTaskListCreateView(APIView):
